@@ -8,8 +8,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="display-3 fw-bold mb-4">Selamat Datang di Portal Desa</h1>
-                <p class="lead mb-4">Informasi terkini, layanan, dan berita dari desa kami untuk kemajuan bersama.</p>
+                <h1 class="display-3 fw-bold mb-4">Welcome to My Landing Page</h1>
+                <p class="lead mb-4">Informasi terkini seputar perkembangan teknologi dan informasi.</p>
                 <a href="{{ route('berita.index') }}" class="btn btn-light btn-lg">
                     <i class="bi bi-newspaper"></i> Lihat Berita
                 </a>
