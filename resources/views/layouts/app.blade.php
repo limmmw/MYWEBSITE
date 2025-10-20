@@ -9,11 +9,37 @@
     <style>
         /* Futuristic Navbar */
         .navbar-futuristic {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 1rem 0;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.75), rgba(118, 75, 162, 0.75)),
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80') center/cover no-repeat;
+        background-attachment: fixed;
+        backdrop-filter: blur(10px);
+        border: none !important;
+        box-shadow: none !important;
+        padding: 1rem 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        }
+
+        .navbar-futuristic::before {
+        content: none; /* Hilangkan overlay tambahan */
+        }
+
+        body:not(.has-hero) .navbar-futuristic {
+        position: relative;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80') center/cover no-repeat;
+        background-attachment: fixed;
+        backdrop-filter: blur(8px);
+        }
+
+        /* Hilangkan garis bawah antar elemen */
+        body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
         }
         
         .navbar-brand {
@@ -122,10 +148,16 @@
         }
         
         /* Footer Modern */
+        /* Footer Modern with Image */
         footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin-top: 60px;
+        background-image: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%),
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        margin-top: 60px;
         }
         
         footer h5, footer p {
@@ -170,9 +202,15 @@
                 max-width: 100%;
             }
         }
+        
+        .pt-7 {
+        padding-top: 6rem !important;
+        }
+
+        
     </style>
 </head>
-<body>
+<body class="@yield('body-class')">
     <nav class="navbar navbar-expand-lg navbar-futuristic">
         <div class="container">
             <!-- Logo Portal Desa -->
