@@ -38,7 +38,7 @@ Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.sh
 Auth::routes(['register' => false]);
 
 // Redirect setelah login ke admin dashboard
-Route::get('/home', function () {
+Route::get('/home54321', function () {
     return redirect()->route('admin.dashboard');
 })->middleware('auth');
 
