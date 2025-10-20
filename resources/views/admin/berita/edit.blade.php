@@ -4,11 +4,11 @@
 
 @section('content')
 <div class="mb-4">
-    <h2>Edit Berita</h2>
+    <h2>Edit Content</h2>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('admin.berita.index') }}">Berita</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.berita.index') }}">Contents</a></li>
             <li class="breadcrumb-item active">Edit</li>
         </ol>
     </nav>
@@ -21,7 +21,7 @@
             @method('PUT')
             
             <div class="mb-3">
-                <label for="judul" class="form-label">Judul Berita <span class="text-danger">*</span></label>
+                <label for="judul" class="form-label">Judul <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" value="{{ old('judul', $beritum->judul) }}" required>
                 @error('judul')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="gambar" class="form-label">Gambar Berita</label>
+                <label for="gambar" class="form-label">Gambar</label>
                 @if($beritum->gambar)
                     <div class="mb-2">
                         <img src="{{ Storage::url($beritum->gambar) }}" alt="{{ $beritum->judul }}" class="img-thumbnail" style="max-width: 200px;">
@@ -44,7 +44,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="konten" class="form-label">Konten Berita <span class="text-danger">*</span></label>
+                <label for="konten" class="form-label">Konten <span class="text-danger">*</span></label>
                 <textarea class="form-control @error('konten') is-invalid @enderror" id="konten" name="konten" rows="10" required>{{ old('konten', $beritum->konten) }}</textarea>
                 @error('konten')
                     <div class="invalid-feedback">{{ $message }}</div>

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="mb-4">
-    <h2>Tambah Berita Baru</h2>
+    <h2>Add Contents    </h2>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
@@ -20,7 +20,7 @@
             @csrf
             
             <div class="mb-3">
-                <label for="judul" class="form-label">Judul Berita <span class="text-danger">*</span></label>
+                <label for="judul" class="form-label">Judul <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" value="{{ old('judul') }}" required>
                 @error('judul')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="gambar" class="form-label">Gambar Berita</label>
+                <label for="gambar" class="form-label">Gambar</label>
                 <input type="file" class="form-control @error('gambar') is-invalid @enderror" id="gambar" name="gambar" accept="image/*">
                 <small class="text-muted">Format: JPG, JPEG, PNG. Max: 2MB</small>
                 @error('gambar')
@@ -37,7 +37,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="konten" class="form-label">Konten Berita <span class="text-danger">*</span></label>
+                <label for="konten" class="form-label">Konten <span class="text-danger">*</span></label>
                 <textarea class="form-control @error('konten') is-invalid @enderror" id="konten" name="konten" rows="10" required>{{ old('konten') }}</textarea>
                 @error('konten')
                     <div class="invalid-feedback">{{ $message }}</div>
