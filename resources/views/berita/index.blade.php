@@ -7,6 +7,15 @@
     <div class="container">
         <h1 class="display-4 mb-2">Berita Desa</h1>
         <p class="lead">Informasi dan berita terkini dari desa kami</p>
+        
+        @if(request('search'))
+            <div class="alert alert-light mt-3" role="alert">
+                <i class="bi bi-search"></i> Hasil pencarian untuk: <strong>"{{ request('search') }}"</strong>
+                <a href="{{ route('berita.index') }}" class="btn btn-sm btn-outline-light ms-2">
+                    <i class="bi bi-x"></i> Hapus Filter
+                </a>
+            </div>
+        @endif
     </div>
 </div>
 
@@ -43,7 +52,11 @@
         @empty
         <div class="col-12">
             <div class="alert alert-info text-center">
-                <i class="bi bi-info-circle"></i> Belum ada berita yang dipublikasikan.
+                @if(request('search'))
+                    <i class="bi bi-info-circle"></i> Tidak ada berita yang ditemukan untuk kata kunci "{{ request('search') }}".
+                @else
+                    <i class="bi bi-info-circle"></i> Belum ada berita yang dipublikasikan.
+                @endif
             </div>
         </div>
         @endforelse
@@ -51,7 +64,7 @@
 
     @if($berita->hasPages())
     <div class="d-flex justify-content-center mt-5">
-        {{ $berita->links() }}
+        {{ $berita->appends(['search' => request('search')])->links() }}
     </div>
     @endif
 </div>

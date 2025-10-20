@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>Kelola Berita</h2>
+    <h2>Manage Contents</h2>
     <a href="{{ route('admin.berita.create') }}" class="btn btn-primary">
         <i class="bi bi-plus-circle"></i> Tambah Berita
     </a>
