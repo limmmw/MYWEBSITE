@@ -2,6 +2,8 @@
 
 @section('title', 'Beranda')
 
+@section('body-class', 'has-hero')
+
 @section('content')
 <!-- Hero Section yang Menyatu dengan Navbar -->
 <div class="hero-section">
@@ -120,15 +122,24 @@
 <style>
 /* Hero Section yang Menyatu dengan Navbar */
 .hero-section {
-    background-image: 
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 50%, rgba(240, 147, 251, 0.8) 100%),
-    url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80');
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.75), rgba(118, 75, 162, 0.75)),
+                url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80') center/cover no-repeat;
     background-attachment: fixed;
-    margin-top: -88px; /* Offset navbar height untuk menyatu */
-    padding-top: 88px; /* Padding untuk konten tidak tertutup navbar */
+    min-height: 100vh;
+    margin-top: 0;
+    padding-top: 6rem; /* beri ruang agar teks tidak tertimpa navbar */
 }
+
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to bottom, rgba(102,126,234,0.9), transparent);
+    z-index: 1;
+}
+
 
 /* Gradient Text */
 .gradient-text {

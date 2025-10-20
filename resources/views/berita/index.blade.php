@@ -3,16 +3,18 @@
 @section('title', 'Berita Desa')
 
 @section('content')
-<div class="py-5" style="
+<div class="pt-7 pb-5" style="
+    margin-top: 0;
+    padding-top: 7rem; /* memberi jarak dari navbar */
     background-image: 
-        linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 50%, rgba(240, 147, 251, 0.8) 100%),
+        linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%),
         url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    ">
+    color: white;">
     <div class="container">
-        <h1 class="display-4 mb-2">Berita Desa</h1>
+        <h1 class="display-4 fw-bold gradient-text mb-2">Berita Desa</h1>
         <p class="lead">Informasi dan berita terkini dari desa kami</p>
         
         @if(request('search'))
