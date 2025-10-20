@@ -9,11 +9,29 @@
     <style>
         /* Futuristic Navbar */
         .navbar-futuristic {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 1rem 0;
+        background-image: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%),
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 1rem 0;
+        position: relative;
+        }
+
+        .navbar-futuristic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(102, 126, 234, 0.3);
+        backdrop-filter: blur(5px);
+        z-index: -1;
         }
         
         .navbar-brand {
@@ -122,10 +140,16 @@
         }
         
         /* Footer Modern */
+        /* Footer Modern with Image */
         footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin-top: 60px;
+        background-image: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%),
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        margin-top: 60px;
         }
         
         footer h5, footer p {

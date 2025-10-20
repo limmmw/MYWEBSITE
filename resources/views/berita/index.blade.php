@@ -3,7 +3,14 @@
 @section('title', 'Berita Desa')
 
 @section('content')
-<div class="bg-success text-white py-5">
+<div class="py-5" style="
+    background-image: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 50%, rgba(240, 147, 251, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    ">
     <div class="container">
         <h1 class="display-4 mb-2">Berita Desa</h1>
         <p class="lead">Informasi dan berita terkini dari desa kami</p>
